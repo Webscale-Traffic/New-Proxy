@@ -16,12 +16,12 @@ module.exports = {
   // Carousel
   //
   getCarousel: (req, res) => {
-    axios.get('http://54.219.141.245:3004/properties/:property_id/')
+    axios.get('http://54.219.141.245:3004/properties/:id/')
       .then((data) => { res.status(200).send(data) })
       .catch((error) => { res.status(404).send(error) })
   },
   postCarousel: (req, res) => {
-    axios.post('http://54.219.141.245:3004/properties/:property_id/')
+    axios.post('http://54.219.141.245:3004/properties/:id/')
       .then((data) => { res.status(201).send() })
       .catch((error) => { res.status(400).send(error) })
   },
