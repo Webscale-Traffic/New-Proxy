@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const controllers = require('./controllers.js');
+const bodyParser = require('body-parser');
 
 const port = 5291
 
@@ -13,38 +14,38 @@ const port = 5291
 // ============================================================ //
 // MiddleWare
 //  ----------------------------------------------------------- //
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use('/properties/:id', bodyParser.json());
+// app.use(express.json());
+app.use('/properties/:id', express.static(path.join(__dirname, '../public')));
 
 // ============================================================ //
 // Routes
 //  ----------------------------------------------------------- //
 
-app.get('/properties/:property_id/reservations', (req, res) => {
-  console.log(req.params);
+app.get('/properties/:id/reservations', (req, res) => {
+  // console.log(req.params);
   controllers.getCalendar(req, res);
 })
-app.post('/properties/:property_id/reservations', (req, res) => {
-  console.log(req.body);
+app.post('/properties/:id/reservations', (req, res) => {
+  // console.log(req.body);
   controllers.postCalendar(req, res);
 })
-app.get('/', (req, res) => {
-  console.log(req.params);
+app.get('/properties/:id/similar', (req, res) => {
+  console.log(req);
   controllers.getCarousel(req, res);
 })
-app.post('/', (req, res) => {
-  console.log(req.body);
+app.post('/properties/:id/savedList', (req, res) => {
+  // console.log(req.body);
   controllers.postCarousel(req, res);
 })
-app.get('/', (req, res) => {
-  console.log(req.params);
-  controllers.getReviews(req, res);
-})
-app.post('/', (req, res) => {
-  console.log(req.body);
-  controllers.postReviews(req, res);
-})
+// app.get('/', (req, res) => {
+//   console.log(req.params);
+//   controllers.getReviews(req, res);
+// })
+// app.post('/', (req, res) => {
+//   console.log(req.body);
+//   controllers.postReviews(req, res);
+// })
 
 // ============================================================ //
 // Start Server
