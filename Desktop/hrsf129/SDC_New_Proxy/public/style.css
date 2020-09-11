@@ -1,9 +1,11 @@
 #calendar {
-  display: flex;
+  /* display: flex;
   display: grid;
   grid-auto-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3% auto auto;
+  grid-template-rows: 3% auto auto; */
   /* overflow-y: auto; */
+  top: 0;
+  position: sticky;
 }
 #image-carousel {
   /* display: flex;
@@ -25,12 +27,38 @@
   z-index: 100;
   top: 0; */
 }
-#app {
-  /* flex: 3;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: auto;
-  border-right: 1px solid gray;
-  margin-bottom: 150px; */
+
+.hor {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+.pics {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.harry {
+  display: grid;
+  grid-template-columns: 700px 480px;
+  grid-template-rows: auto auto auto;
+}
+
+.harryContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-container {
+  flex: 2;
+}
+
+.after {
+  background-color: rgb(247, 247, 247);

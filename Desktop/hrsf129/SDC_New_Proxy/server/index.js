@@ -30,8 +30,8 @@ app.post('/properties/:id/reservations', (req, res) => {
   // console.log(req.body);
   controllers.postCalendar(req, res);
 })
-app.get('/properties/:id/similar', (req, res) => {
-  console.log(req);
+app.get('/properties/:id/similiar', (req, res) => {
+  // console.log(req.params);
   controllers.getCarousel(req, res);
 })
 app.post('/properties/:id/savedList', (req, res) => {
