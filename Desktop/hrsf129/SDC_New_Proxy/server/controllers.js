@@ -35,14 +35,9 @@ module.exports = {
   },
   // Reviews
   //
-  // getReviews: (req, res) => {
-  //   axios.get('http://52.53.165.191:9042/properties/:property_id/reservations')
-  //     .then((data) => { res.status(200).send(data) })
-  //     .catch((error) => { res.status(404).send(error) })
-  // },
-  // postReviews: (req, res) => {
-  //   axios.post('52.53.165.191/properties/:property_id/reservations')
-  //     .then((data) => { res.status(201).send() })
-  //     .catch((error) => { res.status(400).send(error) })
-  // }
+  getReviews: (req, res) => {
+    axios.get('http://184.169.237.98:3003/rooms/:id/reviews')
+      .then((data) => { res.status(200).send(data) })
+      .catch((error) => { res.status(404).send(error) })
+  }
 }

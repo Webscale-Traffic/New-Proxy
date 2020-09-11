@@ -38,14 +38,10 @@ app.post('/properties/:id/savedList', (req, res) => {
   // console.log(req.body);
   controllers.postCarousel(req, res);
 })
-// app.get('/', (req, res) => {
-//   console.log(req.params);
-//   controllers.getReviews(req, res);
-// })
-// app.post('/', (req, res) => {
-//   console.log(req.body);
-//   controllers.postReviews(req, res);
-// })
+app.get('/rooms/:id/reviews', (req, res) => {
+  console.log(req.params);
+  controllers.getReviews(req, res);
+})
 
 // ============================================================ //
 // Start Server
